@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Мир Растений</string>
+    <string name="welcome_to_back">Добро пожаловать, обратно</string>
+    <string name="invalid_email">Не првильный Email</string>
+    <string name="password">Password</string>
+    <string name="invalid_password">Не првильный Password</string>
+    <string name="login">Войти</string>
+    <string name="not_accaunt">Нет Аккаунта?</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="descriptons">Войдите в систему, чтобы пользоваться всеми функциями нашего приложения и поддерживать свои растения в лучшей форме!</string>
+    <string name="accaunt">Создать Аккаунт</string>
+    <string name="first_name">First Name</string>
+    <string name="invalid_first_name">Не Првильный First Name</string>
+    <string name="lastname">Last Name</string>
+    <string name="inavlid_last_name">Не Првильный Last Name</string>
+    <string name="email">Email</string>
+    <string name="your_yes_accaunt">Уже есть аккаунт?</string>
+</resources>
