@@ -116,6 +116,7 @@ val dp135 = 135.dp
 val dp140 = 140.dp
 val dp150 = 150.dp
 val dp170 = 170.dp
+val dp175 = 175.dp
 val dp177 = 177.dp
 val dp180 = 180.dp
 val dp190 = 190.dp

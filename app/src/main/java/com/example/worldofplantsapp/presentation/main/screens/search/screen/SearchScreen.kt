@@ -14,7 +14,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -86,7 +85,7 @@ fun SearchScreen(
         }
 
         if (uiState.fauna.orEmpty().isEmpty()) {
-            IsEmptyScreen(text = "Нет результата")
+            IsEmptyScreen(text = "Нет данных")
         } else {
             LazyColumn(
                 modifier = modifier

@@ -46,8 +46,8 @@ import com.example.mediconsultfinalapp.ui.theme.dp110
 import com.example.mediconsultfinalapp.ui.theme.dp115
 import com.example.mediconsultfinalapp.ui.theme.dp12
 import com.example.mediconsultfinalapp.ui.theme.dp120
-import com.example.mediconsultfinalapp.ui.theme.dp122
 import com.example.mediconsultfinalapp.ui.theme.dp13
+import com.example.mediconsultfinalapp.ui.theme.dp130
 import com.example.mediconsultfinalapp.ui.theme.dp15
 import com.example.mediconsultfinalapp.ui.theme.dp150
 import com.example.mediconsultfinalapp.ui.theme.dp17
@@ -125,7 +125,6 @@ fun BerriesItem(
         Text(
             text = text,
             fontSize = sp15,
-            fontStyle = FontStyle.Italic,
             modifier = modifier.padding(bottom = dp10),
         )
     }
@@ -203,15 +202,17 @@ fun Vegetables(
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .height(dp122)
+            .height(dp130)
             .clickable {
                 onNavigatyDetails(plantId)
             }
-            .padding(top = dp15)
+            .padding(top = dp17)
             .padding(horizontal = dp10)
             .clip(RoundedCornerShape(dp17)),
     ) {
-        Row {
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             AsyncImage(
                 model = image,
                 contentScale = ContentScale.Crop,
@@ -227,7 +228,7 @@ fun Vegetables(
                 maxLines = 4,
                 modifier = modifier
                     .fillMaxWidth()
-                    .padding(start = dp10, bottom = dp15)
+                    .padding(start = dp10)
             )
         }
     }
@@ -515,7 +516,7 @@ fun CategoryItems(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = "Более",
+                        text = "Подробнее",
                         fontSize = sp18,
                         modifier = modifier.padding(end = dp5),
                     )

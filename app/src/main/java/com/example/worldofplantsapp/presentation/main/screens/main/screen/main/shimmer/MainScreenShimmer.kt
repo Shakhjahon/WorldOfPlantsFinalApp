@@ -170,7 +170,11 @@ fun ShimmerElement(
 
 @Composable
 fun ShimmerRow(
-    modifier: Modifier, itemCount: Int, rowCount: Int = 1, brush: Brush, itemModifier: Modifier
+    modifier: Modifier,
+    itemCount: Int,
+    rowCount: Int = 1,
+    brush: Brush,
+    itemModifier: Modifier,
 ) {
     Column {
         repeat(rowCount) {
@@ -201,9 +205,11 @@ private fun MainScreenShimmerPreview() {
         MainScreenShimmer(
             themeViewModel = ThemeViewModel(), brush = Brush.linearGradient(
                 listOf(
-                    Color.LightGray.copy(alpha = 0.6f),
-                    Color.LightGray.copy(alpha = 0.2f),
-                    Color.LightGray.copy(alpha = 0.6f),
+                    Color.White.copy(alpha = 0.3f),
+                    Color.White.copy(alpha = 0.5f),
+                    Color.White.copy(alpha = 1.0f),
+                    Color.White.copy(alpha = 0.5f),
+                    Color.White.copy(alpha = 0.3f),
                 )
             )
         )
