@@ -46,8 +46,8 @@ fun OutlinePasswordTextComponent(
 
     var passwordVisiblety by remember { mutableStateOf(false) }
 
-    val icon = if (passwordVisiblety) painterResource(id = R.drawable.eye_icon_visiblety)
-    else painterResource(id = R.drawable.eye_icon)
+    val icon = if (passwordVisiblety) painterResource(id = R.drawable.eye_icon)
+    else painterResource(id = R.drawable.eye_icon_visiblety)
 
     OutlinedTextField(
         modifier = modifier

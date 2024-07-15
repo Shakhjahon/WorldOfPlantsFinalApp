@@ -53,6 +53,7 @@ import com.example.mediconsultfinalapp.ui.theme.dp150
 import com.example.mediconsultfinalapp.ui.theme.dp17
 import com.example.mediconsultfinalapp.ui.theme.dp170
 import com.example.mediconsultfinalapp.ui.theme.dp180
+import com.example.mediconsultfinalapp.ui.theme.dp2
 import com.example.mediconsultfinalapp.ui.theme.dp20
 import com.example.mediconsultfinalapp.ui.theme.dp220
 import com.example.mediconsultfinalapp.ui.theme.dp290
@@ -316,13 +317,18 @@ fun FavoriteItems(
 
     var showDialog by remember { mutableStateOf(false) }
     var showDelete by remember { mutableStateOf(false) }
+    var scale by remember { mutableFloatStateOf(1f) }
+    val animatedScale by animateFloatAsState(targetValue = scale, label = "")
+
     Box(
         modifier = modifier
             .fillMaxWidth()
             .padding(top = dp10)
             .padding(horizontal = dp10)
+            .scale(animatedScale)
             .clip(RoundedCornerShape(dp10))
-            .background(if (switchState) BoxGray else BoxWhite),
+            .background(if (switchState) BoxGray else BoxWhite)
+
     ) {
         Column {
             Row {
@@ -375,7 +381,11 @@ fun FavoriteItems(
                 )
             }
             Divider(
-                modifier = modifier.padding(top = dp10), color = Grays, thickness = 0.3.dp
+                modifier = modifier
+                    .fillMaxWidth()
+                    .padding(top = dp10),
+                color = Grays,
+                thickness = 0.5.dp
             )
             Row(
                 modifier = modifier
@@ -427,7 +437,7 @@ fun FavoriteItems(
                         Box(modifier = modifier
                             .fillMaxSize()
                             .clip(RoundedCornerShape(dp5))
-                            .clickable { deletePlants(plantId) }) {
+                            .clickable { showDelete = false; deletePlants(plantId) }) {
                             Row(
                                 modifier = modifier.fillMaxSize(),
                                 verticalAlignment = Alignment.CenterVertically,
@@ -511,14 +521,14 @@ fun CategoryItems(
                 Row(
                     modifier = Modifier
                         .fillMaxHeight()
+                        .padding(top = dp5)
                         .clip(RoundedCornerShape(dp10))
                         .clickable { onNavigatyDetails(plantId) },
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = "Подробнее",
-                        fontSize = sp18,
-                        modifier = modifier.padding(end = dp5),
+                        text = "Более",
+                        modifier = modifier.padding(end = dp2),
                     )
                     Icon(
                         painter = painterResource(id = R.drawable.arrow_forvard_icon),

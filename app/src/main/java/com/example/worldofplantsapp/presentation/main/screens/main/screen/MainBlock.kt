@@ -167,7 +167,7 @@ private fun MainBlockPreview() {
             ),
             onNavigatyDetails = {},
             themeViewModel = ThemeViewModel(),
-            onNavigatyCategoryDetails = {}
+            onNavigatyCategoryDetails = {},
         )
     }
 }

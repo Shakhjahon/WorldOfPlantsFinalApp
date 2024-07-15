@@ -41,7 +41,8 @@ fun BottomNavGraph(
     themeViewModel: ThemeViewModel,
     onNavigatyYouTube: (String) -> Unit,
     context: Context,
-    onNavigatyMap: (String) -> Unit
+    onNavigatyMap: (String) -> Unit,
+    onNavigatyTelegram : () -> Unit
 ) {
 
     NavHost(
@@ -109,7 +110,8 @@ fun BottomNavGraph(
                 uiStateFlow = viewModel.uiState,
                 onInteraction = viewModel::onEvent,
                 themeViewModel = themeViewModel,
-                onNavigatyMap = onNavigatyMap
+                onNavigatyMap = onNavigatyMap,
+                onNavigatyTelegram = onNavigatyTelegram
             )
         }
         composable(DetailsDestination.routeWithArgs) {

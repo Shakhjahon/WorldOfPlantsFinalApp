@@ -4,27 +4,27 @@ import android.util.Log
 import kotlinx.coroutines.flow.Flow
 
 class PlantCacheDataSourceImpl(
-    private val movieDao: PlantDao
+    private val plantDao: PlantDao
 ) : PlantCacheDataSource {
 
     override suspend fun addMovieToCache(cacheModel: List<PlantCacheModel>) {
         Log.d("VVV", "$cacheModel")
-        movieDao.addMovieToCache(cacheModel)
+        plantDao.addMovieToCache(cacheModel)
     }
 
     override fun fetchAllCacheMovies(): Flow<List<PlantCacheModel>> {
-        return movieDao.addAllPlants()
+        return plantDao.addAllPlants()
     }
 
     override suspend fun deleteMovieById(movieId: String) {
-        movieDao.deletePlantById(movieId)
+        plantDao.deletePlantById(movieId)
     }
 
     override suspend fun clearTable() {
-        movieDao.clearTable()
+        plantDao.clearTable()
     }
 
     override fun observeIsMovieSaved(movieId: String): Flow<Boolean> {
-        return movieDao.observeIsPlantsSaved(movieId)
+        return plantDao.observeIsPlantsSaved(movieId)
     }
 }

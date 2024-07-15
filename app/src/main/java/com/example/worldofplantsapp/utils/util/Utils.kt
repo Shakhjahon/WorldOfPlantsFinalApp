@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import com.example.domain.models.plant.GetPlantDomainModel
@@ -65,7 +66,8 @@ fun isValidateName(name: String): Boolean {
 }
 
 fun makeToast(
-    text: String, context: Context
+    text: String,
+    context: Context,
 ) {
     Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
 }
@@ -73,8 +75,7 @@ fun makeToast(
 
 @Composable
 fun ComponentText(
-    text: String,
-    modifier: Modifier = Modifier
+    text: String, modifier: Modifier = Modifier
 ) {
     Text(
         modifier = Modifier.padding(start = dp10, top = dp10, bottom = dp5),
@@ -110,18 +111,19 @@ fun DottedDivider(
 
 
 @Composable
-fun IsSavedMoviePainter(
+fun IsSavedPlantsPainter(
     onSaveMovieToCache: (ImmutableList<GetPlantDomainModel>) -> Unit,
     movieModel: ImmutableList<GetPlantDomainModel>,
-    isSaved: Boolean
+    isSaved: Boolean,
 ) {
-    IconButton(onClick = {
-        onSaveMovieToCache(movieModel)
-    }) {
+    IconButton(
+        onClick = {
+            onSaveMovieToCache(movieModel)
+        },
+    ) {
         Icon(
             painter = painterResource(
-                id = if (isSaved)
-                    R.drawable.favorite_icon_is_saved
+                id = if (isSaved) R.drawable.favorite_icon_is_saved
                 else R.drawable.favorite_icon_saved
             ),
             contentDescription = null,

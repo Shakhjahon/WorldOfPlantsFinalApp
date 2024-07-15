@@ -17,7 +17,8 @@ fun MainNavGraph(
     themeViewModel: ThemeViewModel,
     onNavigaty: (String) -> Unit,
     context: Context,
-    onNavigatyMap: (String) -> Unit
+    onNavigatyMap: (String) -> Unit,
+    onNavigatyTelegram : () -> Unit
 ) {
     val navController = rememberNavController()
 
@@ -30,7 +31,8 @@ fun MainNavGraph(
                 themeViewModel = themeViewModel,
                 onNavigaty = onNavigaty,
                 context = context,
-                onNavigatyMap = onNavigatyMap
+                onNavigatyMap = onNavigatyMap,
+                onNavigatyTelegram =  onNavigatyTelegram
             )
         }
     }

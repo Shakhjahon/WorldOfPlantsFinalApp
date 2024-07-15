@@ -44,11 +44,6 @@ class RetrofitModule {
         retrofit: Retrofit
     ): UserService = retrofit.create(UserService::class.java)
 
-    @Provides
-    fun providePlantCacheDataSource(
-        movieDao: PlantDao
-    ): PlantCacheDataSource = PlantCacheDataSourceImpl(movieDao)
-
     companion object {
         private const val BASE_URL = "https://parseapi.back4app.com/"
         private const val APP_ID = "OGIFo5laQF6uGknYWU5yUW3mcFZ7rEA4b5GKD0O4"

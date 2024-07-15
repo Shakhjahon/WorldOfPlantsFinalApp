@@ -8,7 +8,6 @@ sealed interface PlantUiState {
     @Immutable
     data class Success(
         val model: List<GetPlantDomainModel>
-
     ) : PlantUiState
 
     data object Loading : PlantUiState

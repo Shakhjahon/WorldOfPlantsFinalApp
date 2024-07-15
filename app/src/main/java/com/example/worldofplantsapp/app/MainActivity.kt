@@ -52,7 +52,12 @@ class MainActivity : ComponentActivity() {
                         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                         startActivity(intent)
                     },
-                    context = applicationContext
+                    context = applicationContext,
+                    onNavigatyTelegram = {
+                        val url = "https://t.me/Shakhjakhon"
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                        startActivity(intent)
+                    }
                 )
             }
         }

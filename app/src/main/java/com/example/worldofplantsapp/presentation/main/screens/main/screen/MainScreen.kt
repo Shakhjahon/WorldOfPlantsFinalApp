@@ -61,7 +61,7 @@ fun LoadedMainScreen(
                 uiState = uiState,
                 onNavigatyDetails = onNavigatyDetails,
                 themeViewModel = themeViewModel,
-                onNavigatyCategoryDetails = onNavigatyCategoryDetails
+                onNavigatyCategoryDetails = onNavigatyCategoryDetails,
             )
         }
     }

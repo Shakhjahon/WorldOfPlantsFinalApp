@@ -25,6 +25,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -34,6 +35,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -42,7 +44,7 @@ import com.example.mediconsultfinalapp.ui.theme.dp126
 import com.example.mediconsultfinalapp.ui.theme.dp13
 import com.example.mediconsultfinalapp.ui.theme.dp15
 import com.example.mediconsultfinalapp.ui.theme.dp2
-import com.example.mediconsultfinalapp.ui.theme.dp20
+import com.example.mediconsultfinalapp.ui.theme.dp30
 import com.example.mediconsultfinalapp.ui.theme.dp40
 import com.example.mediconsultfinalapp.ui.theme.dp5
 import com.example.mediconsultfinalapp.ui.theme.dp50
@@ -103,8 +105,13 @@ fun PlantScreenSuccess(
     val switchState by remember {
         themeViewModel.isDarkThemeEnabled
     }
-
+    var plantList by remember { mutableStateOf(plants) }
     var showDialog by remember { mutableStateOf(false) }
+    val visibilityMap = remember { mutableStateMapOf<String, Boolean>() }
+
+    plantList.forEach { plant ->
+        visibilityMap.putIfAbsent(plant.objectId, true)
+    }
 
     Column(
         modifier = Modifier
@@ -214,7 +221,7 @@ fun DeleteConfirmationDialog(
     }
     Dialog(onDismissRequest = onDismiss) {
         Surface(
-            shape = RoundedCornerShape(dp20),
+            shape = RoundedCornerShape(dp30),
             modifier = Modifier.fillMaxWidth(),
             color = if (switchState) BoxGray else BoxWhite
         ) {
@@ -222,7 +229,10 @@ fun DeleteConfirmationDialog(
                 modifier = Modifier.padding(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text(text = "Вы действительно хотите удалить \nвсе растения")
+                Text(
+                    text = "Вы действительно хотите удалить \n все растения",
+                    textAlign = TextAlign.Center
+                )
                 Spacer(modifier = Modifier.height(16.dp))
                 Row(
                     modifier = Modifier.fillMaxWidth(),

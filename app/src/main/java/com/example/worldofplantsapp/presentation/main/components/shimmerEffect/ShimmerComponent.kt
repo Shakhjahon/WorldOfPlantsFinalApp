@@ -35,9 +35,9 @@ fun ShimmerComponent(
 @Composable
 fun AnimatedShimmer(themeViewModel: ThemeViewModel) {
     val shimmerColors = listOf(
-        Color.Gray.copy(alpha = 0.6f),
-        Color.White.copy(alpha = 0.2f),
-        Color.Gray.copy(alpha = 0.6f),
+        Color.Gray.copy(alpha = 0.8f),
+        Color.White.copy(alpha = 0.3f),
+        Color.Gray.copy(alpha = 0.8f),
     )
 
     val transition = rememberInfiniteTransition(label = "")
@@ -54,8 +54,8 @@ fun AnimatedShimmer(themeViewModel: ThemeViewModel) {
 
     val brush = Brush.linearGradient(
         colors = shimmerColors,
-        start = Offset(x = translateAnim - translateAnim, y = 0.0f),
-        end = Offset(x = translateAnim, y = translateAnim),
+        start = Offset(x = translateAnim + translateAnim, y = translateAnim),
+        end = Offset(x = translateAnim - translateAnim, y = translateAnim),
     )
 
     MainScreenShimmer(brush = brush, themeViewModel = themeViewModel)

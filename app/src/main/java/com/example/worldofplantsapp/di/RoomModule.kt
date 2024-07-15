@@ -2,6 +2,8 @@ package com.example.worldofplantsapp.di
 
 import android.content.Context
 import androidx.room.Room
+import com.example.data.local.room.PlantCacheDataSource
+import com.example.data.local.room.PlantCacheDataSourceImpl
 import com.example.data.local.room.PlantDao
 import com.example.data.local.room.PlantDataBase
 import dagger.Module
@@ -28,4 +30,8 @@ class RoomModule {
         context = context, PlantDataBase::class.java, "movie_database"
     ).build()
 
+    @Provides
+    fun providePlantCacheDataSource(
+        movieDao: PlantDao
+    ): PlantCacheDataSource = PlantCacheDataSourceImpl(movieDao)
 }

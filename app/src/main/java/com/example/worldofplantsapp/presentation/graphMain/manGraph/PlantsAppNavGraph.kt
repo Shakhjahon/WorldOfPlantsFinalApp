@@ -21,7 +21,8 @@ fun PlantsAppNavGraph(
     themeViewModel: ThemeViewModel,
     onNavigaty: (String) -> Unit,
     context: Context,
-    onNavigatyMap: (String) -> Unit
+    onNavigatyMap: (String) -> Unit,
+    onNavigatyTelegram : () -> Unit
 ) {
     NavHost(
         navController = navController,
@@ -39,7 +40,8 @@ fun PlantsAppNavGraph(
                 themeViewModel = themeViewModel,
                 onNavigaty = onNavigaty,
                 context = context,
-                onNavigatyMap = onNavigatyMap
+                onNavigatyMap = onNavigatyMap,
+                onNavigatyTelegram = onNavigatyTelegram
             )
         }
     }

@@ -1,9 +1,9 @@
 package com.example.data.service
 
+import androidx.compose.runtime.Immutable
 import com.example.data.models.profile.UserProfileResponceModel
 import com.example.data.models.profile.UserResponceModel
 import com.example.data.models.world.GetItemsPlantResponceModel
-import com.example.data.models.world.GetPlantResponceModel
 import com.example.data.models.world.GetWorldOfPlantResponceModel
 import retrofit2.Response
 import retrofit2.http.Body
@@ -15,6 +15,7 @@ private const val CLASS_USER = "classes/_User"
 private const val GET_ITEMS = "classes/category_plant"
 private const val GET_PLANTS = "classes/world_of_plants"
 
+@Immutable
 interface UserService {
 
     /** Register User **/

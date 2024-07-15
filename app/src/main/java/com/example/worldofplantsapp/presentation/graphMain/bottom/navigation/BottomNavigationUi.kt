@@ -39,11 +39,9 @@ import com.example.mediconsultfinalapp.ui.theme.dp4
 import com.example.mediconsultfinalapp.ui.theme.dp40
 import com.example.mediconsultfinalapp.ui.theme.dp8
 import com.example.mediconsultfinalapp.ui.theme.sp14
-import com.example.mediconsultfinalapp.ui.theme.sp15
 import com.example.worldofplantsapp.utils.theme.Black
 import com.example.worldofplantsapp.utils.theme.BoxGray
 import com.example.worldofplantsapp.utils.theme.BoxWhite
-import com.example.worldofplantsapp.utils.theme.LedgerFont
 import com.example.worldofplantsapp.utils.view.model.ThemeViewModel
 
 @SuppressLint("AutoboxingStateCreation", "RestrictedApi, UnusedMaterial3ScaffoldPaddingParameter")
@@ -54,6 +52,7 @@ fun BottomNavigationUi(
     onNavigaty: (String) -> Unit,
     context: Context,
     onNavigatyMap: (String) -> Unit,
+    onNavigatyTelegram: () -> Unit
 ) {
 
     val navController = rememberNavController()
@@ -69,7 +68,8 @@ fun BottomNavigationUi(
             themeViewModel = themeViewModel,
             onNavigatyYouTube = onNavigaty,
             context = context,
-            onNavigatyMap = onNavigatyMap
+            onNavigatyMap = onNavigatyMap,
+            onNavigatyTelegram = onNavigatyTelegram
         )
 
     }

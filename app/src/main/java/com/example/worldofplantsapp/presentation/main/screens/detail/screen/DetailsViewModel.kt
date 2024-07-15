@@ -42,18 +42,18 @@ class DetailsViewModel @Inject constructor(
     }
 
     private fun saveOrDeletePlants(
-        movieDomain: ImmutableList<GetPlantDomainModel>,
+        plantDomainModel: ImmutableList<GetPlantDomainModel>,
     ) = viewModelScope.launch {
         val uiStateValue = _uiState.value as DetailsUiState.Success
         if (uiStateValue.isSaved) {
-            deleteUseCase(movieDomain.getOrNull(0)?.objectId.toString())
+            deleteUseCase(plantDomainModel.getOrNull(0)?.objectId.toString())
         } else {
-            savedUseCase(movieDomain)
+            savedUseCase(plantDomainModel)
         }
     }
 
-    private fun checkIsPlantSaved(movieId: String) {
-        observeUseCase(movieId).onEach { isSaved ->
+    private fun checkIsPlantSaved(plantId: String) {
+        observeUseCase(plantId).onEach { isSaved ->
             val uiStateValue = _uiState.value as DetailsUiState.Success
             _uiState.update {
                 uiStateValue.copy(isSaved = isSaved)

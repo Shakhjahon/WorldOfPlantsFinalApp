@@ -46,8 +46,10 @@ import com.example.mediconsultfinalapp.ui.theme.dp15
 import com.example.mediconsultfinalapp.ui.theme.dp170
 import com.example.mediconsultfinalapp.ui.theme.dp20
 import com.example.mediconsultfinalapp.ui.theme.dp220
+import com.example.mediconsultfinalapp.ui.theme.dp25
 import com.example.mediconsultfinalapp.ui.theme.dp250
 import com.example.mediconsultfinalapp.ui.theme.dp3
+import com.example.mediconsultfinalapp.ui.theme.dp30
 import com.example.mediconsultfinalapp.ui.theme.dp35
 import com.example.mediconsultfinalapp.ui.theme.dp4
 import com.example.mediconsultfinalapp.ui.theme.dp5
@@ -62,7 +64,7 @@ import com.example.worldofplantsapp.utils.theme.BoGray
 import com.example.worldofplantsapp.utils.theme.BoWhite
 import com.example.worldofplantsapp.utils.theme.BoxGray
 import com.example.worldofplantsapp.utils.theme.BoxWhite
-import com.example.worldofplantsapp.utils.util.IsSavedMoviePainter
+import com.example.worldofplantsapp.utils.util.IsSavedPlantsPainter
 import com.example.worldofplantsapp.utils.view.model.ThemeViewModel
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
@@ -133,7 +135,7 @@ fun DetailsScreenLoaded(
                 placeholder = painterResource(id = if (switchState) R.drawable.plaseholder_image_black else R.drawable.plaseholder_image)
             )
             IconButton(
-                modifier = modifier.padding(dp15),
+                modifier = modifier.padding(top = dp30, start = dp10),
                 onClick = { popBackStack() },
             ) {
                 Icon(
@@ -178,7 +180,7 @@ fun DetailsScreenLoaded(
                         fontSize = sp18,
                         fontWeight = FontWeight.SemiBold
                     )
-                    IsSavedMoviePainter(onSavedPlantScreen, getPlantUiModel, isSaved)
+                    IsSavedPlantsPainter(onSavedPlantScreen, getPlantUiModel, isSaved)
                 }
                 Row(
                     modifier = modifier.padding(top = dp10)

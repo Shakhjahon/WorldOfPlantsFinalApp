@@ -82,6 +82,7 @@ dependencies {
     implementation(libs.accompanist.navigation.animation.vlatestversion)
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.accompanist.navigation.animation.v0230)
+    implementation(libs.accompanist.navigation.animation)
 
     /** For swipeable state **/
     implementation(libs.androidx.material)
@@ -91,10 +92,11 @@ dependencies {
 
     /** Hilt **/
     implementation(libs.hilt.android)
-    implementation(libs.google.firebase.crashlytics.buildtools)
     ksp(libs.hilt.android.compiler)
-    implementation(libs.accompanist.navigation.animation)
     implementation(libs.androidx.hilt.navigation.compose.v120)
+
+    /** Firebase **/
+    implementation(libs.google.firebase.crashlytics.buildtools)
 
     /** Coil **/
     implementation(libs.coil.compose)
@@ -107,6 +109,7 @@ dependencies {
 
     /** work manager **/
     implementation(libs.androidx.work.runtime.ktx)
+
     implementation(libs.accompanist.flowlayout)
     implementation(libs.androidx.foundation)
     implementation(libs.androidx.core.ktx)

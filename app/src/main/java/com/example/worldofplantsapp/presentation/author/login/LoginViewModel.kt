@@ -68,6 +68,7 @@ class LoginViewModel @Inject constructor(
                     userName = _userInfoState.value.email
                 )
                 if (request.status == ResponseStatus.SUCCESS) {
+                    makeToast("Вы успешно Вошли в аккаунт", context)
                     doNavigatyToMainAppGraph(
                         OnNavigatyMainScreen(
                             request.data ?: UserProfileDomainModel.unknown

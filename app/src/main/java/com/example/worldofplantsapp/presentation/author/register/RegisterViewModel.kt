@@ -80,6 +80,7 @@ class RegisterViewModel @Inject constructor(
                     },
                 )
                 if (request.status == ResponseStatus.SUCCESS) {
+                    makeToast("Вы успешно зарегистрировались", context)
                     doNavigatyToMainAppGraph(
                         RegisterInteraction.OnNavigatyMainScreen(
                             objectId = request.data ?: UserProfileDomainModel.unknown
@@ -125,16 +126,5 @@ class RegisterViewModel @Inject constructor(
                 userPassword = interaction.userPassword
             )
         }
-    }
-
-    private fun test() {
-        // fdafafaffadadasdaddd
-        if (_infoState.value.email.contains(EMAIL)) {
-
-        }
-    }
-
-    companion object {
-        private const val EMAIL = "@gmail.com"
     }
 }
